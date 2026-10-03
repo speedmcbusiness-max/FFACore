@@ -1,0 +1,22 @@
+name: FFA
+main: me.ffa.FFAPlugin
+version: 1.0.0
+api-version: '1.20'
+description: FFA / CPVP plugin with anti-interference combat lock and arena regeneration
+commands:
+  ffa:
+    description: Main FFA command
+    usage: /ffa help
+  ffasetspawn:
+    description: Set the main spawn (where players go after dying)
+    usage: /ffasetspawn
+  ffaeditor:
+    description: Open the FFA editor (link kits to FFAs)
+    usage: /ffaeditor
+permissions:
+  ffa.admin:
+    description: Manage FFAs, kits and spawns
+    default: op
+  ffa.play:
+    description: Join FFAs
+    default: true

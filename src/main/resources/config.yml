@@ -1,0 +1,70 @@
+# ---------------- FFA CONFIG (colors use &) ----------------
+ffa-item:
+  enabled: true
+  material: GOLDEN_SWORD
+  name: "&7FFA"
+  slot: 4
+  lore:
+    - "&7Right-click to open the FFA menu"
+
+join:
+  teleport-to-spawn: true   # send players to /ffasetspawn when they join the server
+  give-item: true           # give the FFA item on join
+
+death:
+  instant-respawn: true     # skip the death screen
+
+# Anti free-hit: while A and B fight each other, nobody else can hit them
+combat:
+  enabled: true
+  only-in-ffa: true         # only apply to players inside an FFA
+  duration-seconds: 15      # lock time, refreshed on every hit
+  block-third-party: true   # third players cannot hit someone who is fighting another player
+  block-switching: true     # you cannot hit someone else while locked in a fight
+  kill-on-quit: true        # combat logging = death
+  block-leave: true         # cannot use /ffa leave during a fight
+  blocked-commands: [spawn, hub, lobby, tp, home, warp]
+
+# Arena rebuild for crystal pvp (blocks broken/placed/exploded come back)
+regen:
+  enabled: true
+  delay-seconds: 10
+  default-radius: 60        # radius around the FFA spawn that gets rebuilt (/ffa setradius)
+  blocks-per-run: 300       # restored per 10 ticks (anti-lag)
+  no-drops: true
+
+gui:
+  selector-title: "&8FFA Selector"
+  editor-title: "&8FFA Editor"
+  kit-editor-title: "&8Kit Editor"
+  kit-pick-title: "&8Pick kit for %arena%"
+  arena-icon: DIAMOND_SWORD
+  kit-icon: CHEST
+
+messages:
+  prefix: "&8[&7FFA&8] &r"
+  no-permission: "&cYou don't have permission."
+  players-only: "&cOnly players can use this."
+  usage: "&7Usage: &f%usage%"
+  unknown-arena: "&cFFA &f%arena% &cdoesn't exist."
+  unknown-kit: "&cKit &f%kit% &cdoesn't exist."
+  invalid-name: "&cName may only contain letters, numbers, - and _."
+  arena-no-kit: "&cFFA &f%arena% &chas no kit linked. Use /ffaeditor."
+  joined: "&aYou joined &f%arena%&a."
+  left: "&7You left the FFA."
+  not-in-ffa: "&cYou are not in an FFA."
+  cant-leave: "&cYou can't leave while fighting!"
+  cant-command: "&cYou can't use that command while fighting!"
+  kit-saved: "&aKit &f%kit% &asaved from your inventory."
+  kit-deleted: "&cKit &f%kit% &cdeleted."
+  kit-loaded: "&aKit &f%kit% &aloaded. Edit it, then use &f/ffa setkit %kit%&a."
+  spawn-set: "&aMain spawn set."
+  ffa-spawn-set: "&aSpawn for FFA &f%arena% &aset."
+  radius-set: "&aRegen radius for &f%arena% &aset to &f%radius%&a."
+  kit-linked: "&aFFA &f%arena% &anow uses kit &f%kit%&a."
+  arena-deleted: "&cFFA &f%arena% &cdeleted."
+  item-given: "&aGiven the FFA item."
+  reloaded: "&aConfig reloaded."
+  fight-started: "&cYou are now fighting &f%player%"
+  victim-busy: "&c%player% is fighting someone else!"
+  attacker-busy: "&cFinish your current fight first!"
